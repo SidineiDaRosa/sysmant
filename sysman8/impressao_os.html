@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSMAN8</title>
+  <link rel="stylesheet" type="text/css" href="indexEstilo.css" media="screen" />
+  <script type="text/javascript" src="frm_busca_os.js"></script>
+  <script type="text/javascript" src=" editar_excluir_os"></script>
+  <script type="text/javascript" src="impressao.js"></script>
+</head>
+
+<body>
+  <input type="text" id="text1">
+  <input type="button" value="pegar" onclick="funcaoteste()">
+  <script>
+    //document.getElementById("codigoOsIm").value='300'
+    //window.onload=funcaoteste();
+    function funcaoteste() {
+      alert(codigoOs)
+    }
+  </script>
+  <h2><a href="select_os.html">voltar</a></h2>
+  <h3>Consulta ordens de serviço.</h3>
+  <!--Cabeçalho-->
+  <div id="continer-div_impressao">
+    <div class="Continer-inp_impressao">
+      <label for="codigoOs">Código O.S:</label>
+      <input type="number" id="codigoOsIm" name="codigoOsIm" placeholder="Digite o código">
+      <label for="dataEmissaoOs">Data emissão O.S:</label>
+      <input type="date" id="dataEmissaoOs" name="dataEmissaoOs" placeholder="Data da emissão" required>
+      <label for="horaEmissaoOs">Hora Emissão O.S:</label>
+      <input type="time" id="horaEmissaoOs" name="horaEmissaoOs" placeholder="Hora da emissão" required>
+      <label for="dataPrevistaOs">Data prevista/Início O.S:</label>
+      <input type="date" id="dataPrevistaOs" name="dataPrevistaOs" placeholder="Data da Prevista">
+      <label for="horaPrevistaOs">Hora prevista/Início O.S:</label>
+      <input type="time" id="horaPrevistaOs" name="horaPrevistaOs" placeholder="Hora da Prevista">
+      <label for="dataConclusaoOs">Data conclusão O.S:</label>
+      <input type="date" id="dataConclusaoOs" name="dataConclusaoOs" placeholder="Data da conclusão">
+      <label for="horaConclusaoOs">Hora conclusão O.S:</label>
+      <input type="time" id="horaConclusaoOs" name="horaConclusaoOs" placeholder="Hora da conclusão">
+    </div>
+    <div class="Continer-inp_impressao">
+      <label for="patrimonio">Patrimônio:</label>
+      <input type="texto" id="patrimonio" name="patrimonio" placeholder="Patrimônio" required>
+      <label for="emissor">Emissor:</label>
+      <input type="texto" id="emissor" name="emissor" placeholder="Emissor" required>
+      <label for="executante">Executante:</label>
+      <input type="texto" id="executante" name="executante" placeholder="Executante">
+      <label for="situacao">Situação da O.S:</label>
+      <select type="c" name="situacao" id="situacao" placeholder="Digite a situação">
+        <option value="aberto">aberto</option>
+        <option value="indefinido">indefinido</option>
+        <option value="fechado">fechado</option>
+        <option value="em execucao">em andamento</option>
+      </select>
+    </div>
+    <div class="Continer-inp_impressao">
+
+      <label for="descServico">Descrição:</label>
+      <textarea name="descServico" id="descricao" cols="30" rows="5"
+        placeholder="Descrição dos serviços a serem executados" required></textarea>
+      <label for="descricaoExecutado">Descrição executado:</label>
+      <textarea name="descricaoExecutado" id="descricaoExecutado" cols="30" rows="5"
+        placeholder="Descrição dos serviços executados"></textarea>
+      <input type="button" id="dbEditarRegistro" value="Editar Registo" onclick="selectedRowToInput()">
+
+    </div>
+
+  </div>
+  <style>
+    .continer-div_impressao {
+      background-color: seashell;
+      width: 99%;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .Continer-inp_impressao {
+      background-color: seashell;
+      width: 99%;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+
+</body>
+<footer>
+</footer>
+
+</html>

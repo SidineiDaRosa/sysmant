@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSMAN8</title>
+  <link rel="stylesheet" type="text/css" href="indexEstilo.css" media="screen" />
+  <script type="text/javascript" src="frm_consulta_os.js"></script>
+  <script type="text/javascript" src="editar_excluir_os"></script>
+  <script type="text/javascript" src="impressao.js"></script>
+  <script type="text/javascript" src="update_os.js"></script>
+  <script type="text/javascript" src="imprimir_os.js"></script>
+  <script type="text/javascript" src="datas.js"></script>
+</head>
+
+<body>
+  <h3><a href="index.html">Home</a>
+    <h id="txtConsultaOrdens">Consulta ordens de serviço.</h>
+    <script>
+    </script>
+    <div id="continer-div">
+      <div class="Continer-inp" id="Continer-inp1">
+        <label for="codigoOs">Código O.S:</label>
+        <input type="number" id="codigoOs" name="codigoOs" placeholder="Digite o código">
+        <label for="dataEmissaoOs">Data emissão O.S:</label>
+        <input type="date" id="dataEmissaoOs" name="dataEmissaoOs" placeholder="Data da emissão" required>
+        <label for="horaEmissaoOs">Hora Emissão O.S:</label>
+        <input type="time" id="horaEmissaoOs" name="horaEmissaoOs" placeholder="Hora da emissão" required>
+        <label for="dataPrevistaOs">Data prevista/Início O.S:</label>
+        <input type="date" id="dataPrevistaOs" name="dataPrevistaOs" placeholder="Data da Prevista">
+        <label for="horaPrevistaOs">Hora prevista/Início O.S:</label>
+        <input type="time" id="horaPrevistaOs" name="horaPrevistaOs" placeholder="Hora da Prevista">
+        <label for="dataConclusaoOs">Data conclusão O.S:</label>
+        <input type="date" id="dataConclusaoOs" name="dataConclusaoOs" placeholder="Data da conclusão">
+        <label for="horaConclusaoOs">Hora conclusão O.S:</label>
+        <input type="time" id="horaConclusaoOs" name="horaConclusaoOs" placeholder="Hora da conclusão">
+
+      </div>
+
+      <div class="Continer-inp" id="Continer-inp3">
+        <label for="patrimonio">Patrimônio:</label>
+        <input type="texto" id="patrimonio" name="patrimonio" placeholder="Patrimônio" required>
+        <!--Emissor da ordem e serviço-->
+        <label for="emissor">Emissor:</label>
+        <!--<input type="texto" id="emissor" name="emissor" placeholder="Emissor" required>-->
+        <select type="c" name="emissor" id="emissor" placeholder="Digite o emissor">
+          <option value="Sidinei da Rosa">Sidinei da Rosa</option>
+          <option value="Claudiomir de Souza">Claudiomir de Souza</option>
+          <option value="Elvis Missel">Elvis Missel</option>
+          <option value="Osmar Júnior Marini">Osmar Júnior Marini</option>
+          <option value="Gustavo">Gustavo</option>
+          <option value="Reginaldo">Reginaldo</option>
+          <option value="Alair Vaz">Alair Vaz</option>
+          <option value="Osório">Osório</option>
+          <option value="Zuizão">Zuizão</option>
+          <option value="Jean">Jean</option>
+          <option value="Segurança">Segurança</option>
+          <option value="Secador">Secador</option>
+          <option value="João Guedes">João Guedes</option>
+          <option value="Joarez">Joarez</option>
+          <option value="Deniz">Deniz</option>
+          <option value="Cristian Gotardo">Cristian Gotardo</option>
+          <option value="Carlos">Carlos</option>
+          <option value="Alceu">Alceu</option>
+        </select>
+        <!------------------------------------------------------------------------------------>
+        <!--Executante da ordem e serviço-->
+        <label for="executante">Executante:</label>
+        <!--<input type="texto" id="executante" name="executante" placeholder="Executante">-->
+        <select type="c" name="executante" id="executante" placeholder="Digite o executante">
+          <option value="Sidinei da Rosa">Sidinei da Rosa</option>
+          <option value="Edno Fragoso">Edno Fragoso</option>
+          <option value="Sidnei Czrny">Sidnei Czrny</option>
+          <option value="Fernando H Cardoso">Fernando H Cardoso</option>
+          <option value="Alessandro Mendes">Alessandro Mendes</option>
+          <option value="Cristian Gotardo">Cristian Gotardo</option>
+          <option value="Patrik">Patrik</option>
+          <option value="Eletricista">Eletricista</option>
+          <option value="Terceiro">Terceiro</option>
+        </select>
+        <!--imagem da os-->
+        <style>
+          #imagem {
+            text-decoration: underline;
+            color: blue;
+          }
+        </style>
+        <label for="imagem">imagem:</label>
+        <input type="url" id="imagem" name="imagem" onclick="abreimagem()">
+
+      </div>
+      <div class="Continer-inp" id="Continer-inp2">
+        <script>
+          function abreimagem() {
+            let urlBusca = document.getElementById('imagem').value
+
+            window.location.href = urlBusca;
+          }
+        </script>
+        <label for="descServico">Descrição:</label>
+        <textarea name="descServico" id="descricao" cols="30" rows="5"
+          placeholder="Descrição dos serviços a serem executados" required></textarea>
+        <label for="descricaoExecutado">Descrição executado:</label>
+        <textarea name="descricaoExecutado" id="descricaoExecutado" cols="30" rows="5"
+          placeholder="Descrição dos serviços executados"></textarea>
+        <label for="situacao">Situação da O.S:</label>
+        <select type="c" name="situacao" id="situacao" placeholder="Digite a situação">
+          <option value="aberto">aberto</option>
+          <option value="indefinido">indefinido</option>
+          <option value="fechado">fechado</option>
+          <option value="em execucao">em andamento</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="continer-bt" id="continer-bt">
+      <select type="c" name="tipoDeConsulta" id="tipoDeConsulta" placeholder="tipo de consulta">
+        <option value="1">Entre data inicial e final</option>
+        <option value="2">Executante</option>
+        <option value="3">Menor que data final</option>
+        <option value="4">Maior que data inicial</option>
+        <option value="5">Busca pelo Código</option>
+        <option value="6">intervalo entre data inicial</option>
+        <input class="inpbotao" type="button" id="btsalvar" name="btsalvar" value="Consultar OS"
+          onclick="TipoDeConsulta();">
+        <!---->
+
+      </select>
+      <input class="inpbotao" type="button" id="btEditarRegistro" value="Habiltar edição" onclick="HabilitarEdicao()">
+      <input class="inpbotao" type="button" id="imprimir" value="Imprimir" onclick="CriaPDF()">
+      <input class="inpbotao" type="button" id="voltar" value="Visualisar tabela" onclick="PintaLinha();">
+      <script>
+function PintaLinha(){
+  window.confirm("deseja");
+  
+  document.getElementById("minhaTabela").style.backgroundColor.rows(2)="tomato";
+
+}
+      </script>
+      <input class="inpbotao" type="button" id="btAtualizar" value="Salvar atualização" onclick="ConfUpdateOs();">
+
+    </div>
+    <!--Inicio do formulário da impressão usando o método post PHP-->
+    <form action="imprimir_os.php" method="POST">
+      <input type="hidden" id="codigoOsImprimir" name="codigoOsImprimir">
+      <input type="hidden" id="dataEmissaoOsImprimir" name="dataEmissaoOsImprimir">
+      <input type="hidden" id="horaEmissaoOsImprimir" name="horaEmissaoOsImprimir">
+
+      <input type="hidden" id="dataPrevistaOsImprimir" name="dataPrevistaOsImprimir">
+      <input type="hidden" id="horaPrevistaOsImprimir" name="horaPrevistaOsImprimir">
+
+      <input type="hidden" id="patrimonioImprimir" name="patrimonioImprimir">
+      <input type="hidden" id="executanteImprimir" name="executanteImprimir">
+      <input type="hidden" id="descricaoImprimir" name="descricaoImprimir">
+      <input type="hidden" id="descricaoExecutadoImprimir" name="descricaoExecutadoImprimir">
+      <input type="hidden" id="situacaoImprimir" name="situacaoImprimir">
+      <!--Botão que chama formulário da impressão  php-->
+      <input type="submit" value="Visualizar impressão">
+      <input type="button" value="Gera gráfico de gantt" onclick="executaTimeLine()">
+    </form>
+    <!--fim do formulário da impressão-->
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      #listaOs{
+   background-color: brown;
+   
+  }
+      #minhaTabela {
+        width: 100%;
+        margin: 0 auto;
+        border: 0;
+        /*box-shadow: 0 5px 30px darkgrey;*/
+        border-spacing: 0;
+      }
+
+      #minhaTabela thead th {
+        background-color: rgb(88, 85, 85);
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        font-stretch: condensed;
+      }
+
+      #minhaTabela tr td {
+        padding: 0;
+        text-align: center;
+
+        cursor: pointer;
+        /**importante para não mostrar cursor de texto**/
+      }
+
+      #minhaTabela tr td:last-child {
+        text-align: right;
+      }
+
+      /**Cores**/
+      #minhaTabela tr:nth-child(odd) {
+        background-color: #eee;
+      }
+
+      /**Cor quando passar por cima**/
+      #minhaTabela tr:hover td {
+        background-color: #feffb7;
+      }
+
+      /**Cor quando selecionado**/
+      #minhaTabela tr.selecionado td {
+        background-color: #aff7ff;
+      }
+
+
+      button#visualizarDados {
+        background-color: white;
+        border: 1px solid black;
+        width: 50%;
+        margin: 10px auto;
+        padding: 10px 0;
+        display: block;
+        color: black;
+      }
+
+      .content {
+        display: flex;
+        margin: auto;
+      }
+
+      .rTable {
+        width: 100%;
+        text-align: center;
+      }
+
+      .rTable thead {
+        background: black;
+        font-weight: normal;
+        color: #fff;
+      }
+
+      .rTable tbody tr:nth-child(2n) {
+        background: #ccc;
+      }
+
+      .rTable th,
+      .rTable td {
+        padding: 7px 0;
+      }
+
+      /*seta a estilização do parametros dos registros*/
+      td {
+        font-size: 15px;
+        font-stretch: semi-condensed;
+        font-family: Arial;
+        font-weight: normal;
+      }
+
+      @media screen and (max-width: 480px) {
+        .content {
+          width: 94%;
+        }
+
+        .rTable thead {
+          display: none;
+        }
+
+        .rTable tbody td {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      @media only screen and (min-width: 1200px) {
+        .content {
+          width: 100%;
+        }
+
+        .rTable tbody tr td:nth-child(1) {
+          width: 10%;
+        }
+
+        .rTable tbody tr td:nth-child(2) {
+          width: 30%;
+        }
+
+        .rTable tbody tr td:nth-child(3) {
+          width: 20%;
+        }
+
+        .rTable tbody tr td:nth-child(4) {
+          width: 10%;
+        }
+
+        .rTable tbody tr td:nth-child(5) {
+          width: 30%;
+        }
+      }
+    </style>
+    <!--Código de manipulação das tabelas-->
+    <style>
+      #Resualtado {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 200;
+        color: cornflowerblue;
+      }
+    </style>
+    <div id="Resultado"></div>
+    <script>
+
+      var rIndex,
+        table = document.getElementById("minhaTabela");
+
+      // check the empty input
+      //verifiva entrada se é válida
+      function checkEmptyInput() {
+        var isEmpty = false,
+
+          fname = document.getElementById("fname").value,
+          lname = document.getElementById("lname").value,
+          age = document.getElementById("age").value;
+
+        if (fname === "") {
+          alert("First Name Connot Be Empty");
+          isEmpty = true;
+        }
+        else if (lname === "") {
+          alert("Last Name Connot Be Empty");
+          isEmpty = true;
+        }
+        else if (age === "") {
+          alert("Age Connot Be Empty");
+          isEmpty = true;
+        }
+        return isEmpty;
+      }
+
+      // add Row
+      //Adiciona liha na tabela
+      function addHtmlTableRow() {
+        // get the table by id
+        // create a new row and cells
+        // get value from input text
+        // set the values into row cell's
+        if (!checkEmptyInput()) {
+          var newRow = table.insertRow(table.length),
+            cell1 = newRow.insertCell(0),
+            cell2 = newRow.insertCell(1),
+            cell3 = newRow.insertCell(2),
+            fname = document.getElementById("fname").value,
+            lname = document.getElementById("lname").value,
+            age = document.getElementById("age").value;
+
+          cell1.innerHTML = fname;
+          cell2.innerHTML = lname;
+          cell3.innerHTML = age;
+          // call the function to set the event to the new row
+          selectedRowToInput();
+        }
+      }
+
+      // display selected row data into input text
+
+      function selectedRowToInput() {
+
+        table = document.getElementById("minhaTabela");
+
+        for (var i = 1; i < table.rows.length; i++) {
+          table.rows[i].onclick = function () {
+            // get the seected row index
+            rIndex = this.rowIndex;//seleciona esta linha da tabela
+            document.getElementById("codigoOs").value = this.cells[0].innerHTML;
+            document.getElementById("dataEmissaoOs").value = this.cells[1].innerHTML;
+            document.getElementById("horaEmissaoOs").value = this.cells[2].innerHTML;
+            document.getElementById("dataPrevistaOs").value = this.cells[3].innerHTML;
+            document.getElementById("horaPrevistaOs").value = this.cells[4].innerHTML;
+            document.getElementById("dataConclusaoOs").value = this.cells[5].innerHTML;
+            document.getElementById("horaConclusaoOs").value = this.cells[6].innerHTML;
+            document.getElementById("patrimonio").value = this.cells[7].innerHTML;
+            document.getElementById("emissor").value = this.cells[8].innerHTML;
+            document.getElementById("executante").value = this.cells[9].innerHTML;
+            document.getElementById("descricao").value = this.cells[10].innerHTML;
+            document.getElementById("descricaoExecutado").value = this.cells[11].innerHTML;
+            document.getElementById("situacao").value = this.cells[12].innerHTML;
+            document.getElementById("imagem").value = this.cells[13].innerHTML;
+           
+
+
+            //////////////////////////////////////////////////////////////////////////////
+            ///chama função impressão
+            Grava_impressao()
+
+          };
+        }
+      }
+
+
+
+
+    </script>
+    <h2 id="msgResult">Resultados da pesquisa:</h2>
+    <div id="Resultado"></div>
+    <div id="Resultado2"></div>
+
+    <!--Div de Impressão-->
+    <!--------------------------------------------------------------------->
+    <!--Código que gera o gáfico de gannt-->
+    <!--------------------------------------------------------------------->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      <style>
+
+      </style>
+// <div id="timeline" style="height: 500px;"></div>
+    </script>
+    <div id="timeline" style="height: 2000px;"></div>
+
+    <!--------------------------------------------------------------------->
+    <!--Fim que gera o gáfico de gannt-->
+    <!--------------------------------------------------------------------->
+
+    <script>
+      //impressao pdfs
+      function CriaPDF() {
+        alert("IMPRIMIR EM PDF!");
+
+        let idOsPDF = document.getElementById("codigoOs").value
+        let dtEmissOsPDF = document.getElementById("dataEmissaoOs").value
+        let hrEmissOsPDF = document.getElementById("horaEmissaoOs").value
+        let dtInicOsPDF = document.getElementById("dataPrevistaOs").value
+        let hrInicOsPDF = document.getElementById("horaPrevistaOs").value
+        var div1 = "<h1>Ordem de serviço</h1><h2>" + idOsPDF + "</h2><br><h3>" + dtEmissOsPDF + "-----" + hrEmissOsPDF + "-----" + dtInicOsPDF + "-----" + hrInicOsPDF + "</h3>"
+
+
+        var estilo = "<style>h1{color:black;}</style>"
+        var pegar_dados = estilo + div1
+
+        var janela = window.open('', '', 'width=600,heigth=800');
+        janela.document.write('<html><head>');
+        janela.document.write('<title>Documento PDF</title></head>');
+        janela.document.write('<body>');
+        janela.document.write(pegar_dados);
+        janela.document.write('</body></html>');
+        janela.document.close();
+        janela.print();
+
+      }
+    </script>
+
+</body>
+<footer>
+
+
+</footer>
+
+</html>
